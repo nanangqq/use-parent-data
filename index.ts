@@ -30,7 +30,7 @@ export const useParentDataChild = <T_parentData = any>(
     return () => {
       window.removeEventListener('message', handleParentData)
     }
-  }, [])
+  }, [targetOrigin])
 
   return { parentData }
 }

@@ -40,7 +40,7 @@ var useParentDataChild = function (targetOrigin) {
         return function () {
             window.removeEventListener('message', handleParentData);
         };
-    }, []);
+    }, [targetOrigin]);
     return { parentData: parentData };
 };
 exports.useParentDataChild = useParentDataChild;
