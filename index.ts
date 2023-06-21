@@ -66,5 +66,5 @@ export const useParentDataParent = <T_data = any>({
     return () => {
       window.removeEventListener('message', childReadyMessageHandler)
     }
-  }, [data, iframeRef])
+  }, [data, iframeRef, targetOrigin])
 }

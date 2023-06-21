@@ -67,6 +67,6 @@ var useParentDataParent = function (_a) {
         return function () {
             window.removeEventListener('message', childReadyMessageHandler);
         };
-    }, [data, iframeRef]);
+    }, [data, iframeRef, targetOrigin]);
 };
 exports.useParentDataParent = useParentDataParent;

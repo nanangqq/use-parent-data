@@ -1,6 +1,6 @@
 {
   "name": "use-parent-data",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "transfer data to iframe child from parent react hook",
   "main": "index.js",
   "scripts": {
