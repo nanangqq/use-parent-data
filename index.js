@@ -20,8 +20,9 @@ exports.useParentDataParent = exports.useParentDataChild = void 0;
 var react_1 = require("react");
 /**
  * get data from parent
- * @param T_parentData - type of data from parent, default any
+ * @param targetOrigin - target origin, default '*'
  * @returns data from parent
+ * @param T_parentData - type of data from parent, default any
  */
 var useParentDataChild = function (_a) {
     var _b = _a.targetOrigin, targetOrigin = _b === void 0 ? '*' : _b;
@@ -47,6 +48,7 @@ exports.useParentDataChild = useParentDataChild;
  * send data to child when child is ready
  * @param data - data sending to child
  * @param iframeRef - iframe ref
+ * @param targetOrigin - target origin, default '*'
  * @param T_data - type of data sending to child, default any
  */
 var useParentDataParent = function (_a) {
