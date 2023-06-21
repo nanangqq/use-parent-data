@@ -10,6 +10,10 @@
   },
   "author": "nanangqq",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nanangqq/use-parent-data"
+  },
   "dependencies": {
     "react": "^17.0.2"
   },

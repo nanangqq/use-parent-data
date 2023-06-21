@@ -23,14 +23,15 @@ var react_1 = require("react");
  * @param T_parentData - type of data from parent, default any
  * @returns data from parent
  */
-var useParentDataChild = function () {
-    var _a = __read((0, react_1.useState)({}), 2), parentData = _a[0], setParentData = _a[1];
+var useParentDataChild = function (_a) {
+    var _b = _a.targetOrigin, targetOrigin = _b === void 0 ? '*' : _b;
+    var _c = __read((0, react_1.useState)({}), 2), parentData = _c[0], setParentData = _c[1];
     (0, react_1.useEffect)(function () {
         var parent = window.parent;
         if (!parent) {
             return function () { };
         }
-        parent.postMessage('child-ready', '*');
+        parent.postMessage('child-ready', targetOrigin);
         var handleParentData = function (event) {
             setParentData(event.data);
         };
@@ -43,19 +44,19 @@ var useParentDataChild = function () {
 };
 exports.useParentDataChild = useParentDataChild;
 /**
- * send data to child
+ * send data to child when child is ready
  * @param data - data sending to child
  * @param iframeRef - iframe ref
  * @param T_data - type of data sending to child, default any
  */
 var useParentDataParent = function (_a) {
-    var data = _a.data, iframeRef = _a.iframeRef;
+    var data = _a.data, iframeRef = _a.iframeRef, _b = _a.targetOrigin, targetOrigin = _b === void 0 ? '*' : _b;
     (0, react_1.useEffect)(function () {
         var childReadyMessageHandler = function (event) {
             var _a;
             if (event.data === 'child-ready') {
                 if (iframeRef.current) {
-                    (_a = iframeRef.current.contentWindow) === null || _a === void 0 ? void 0 : _a.postMessage(data, '*');
+                    (_a = iframeRef.current.contentWindow) === null || _a === void 0 ? void 0 : _a.postMessage(data, targetOrigin);
                 }
                 window.removeEventListener('message', childReadyMessageHandler);
             }
