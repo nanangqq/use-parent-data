@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": ["ESNext", "DOM"],
+    "downlevelIteration": true
+  },
+  "files":["index.ts"]
+}
