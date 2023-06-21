@@ -24,9 +24,9 @@ var react_1 = require("react");
  * @returns data from parent
  * @param T_parentData - type of data from parent, default any
  */
-var useParentDataChild = function (_a) {
-    var _b = _a.targetOrigin, targetOrigin = _b === void 0 ? '*' : _b;
-    var _c = __read((0, react_1.useState)({}), 2), parentData = _c[0], setParentData = _c[1];
+var useParentDataChild = function (targetOrigin) {
+    if (targetOrigin === void 0) { targetOrigin = '*'; }
+    var _a = __read((0, react_1.useState)({}), 2), parentData = _a[0], setParentData = _a[1];
     (0, react_1.useEffect)(function () {
         var parent = window.parent;
         if (!parent) {

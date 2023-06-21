@@ -4,9 +4,7 @@
  * @returns data from parent
  * @param T_parentData - type of data from parent, default any
  */
-export declare const useParentDataChild: <T_parentData = any>({ targetOrigin, }: {
-    targetOrigin?: string;
-}) => {
+export declare const useParentDataChild: <T_parentData = any>(targetOrigin?: string) => {
     parentData: T_parentData;
 };
 /**
