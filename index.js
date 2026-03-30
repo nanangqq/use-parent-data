@@ -59,8 +59,8 @@ var useParentDataParent = function (_a) {
             if (event.data === 'child-ready') {
                 if (iframeRef.current) {
                     (_a = iframeRef.current.contentWindow) === null || _a === void 0 ? void 0 : _a.postMessage(data, targetOrigin);
+                    window.removeEventListener('message', childReadyMessageHandler);
                 }
-                window.removeEventListener('message', childReadyMessageHandler);
             }
         };
         window.addEventListener('message', childReadyMessageHandler);

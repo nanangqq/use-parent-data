@@ -56,8 +56,8 @@ export const useParentDataParent = <T_data = any>({
       if (event.data === 'child-ready') {
         if (iframeRef.current) {
           iframeRef.current.contentWindow?.postMessage(data, targetOrigin)
+          window.removeEventListener('message', childReadyMessageHandler)
         }
-        window.removeEventListener('message', childReadyMessageHandler)
       }
     }
 
